@@ -9,7 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApiDbContext>(opt => opt.UseSqlServer(connectionString));
 builder.Services.AddAutoMapper(typeof(SellerProfile));
+builder.Services.AddAutoMapper(typeof(ProductProfile));
 builder.Services.AddScoped<ISellerRepository, SellerRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 
 builder.Services.AddControllers();

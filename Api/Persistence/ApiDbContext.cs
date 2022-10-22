@@ -10,5 +10,6 @@ namespace Api.Persistence
         }
 
         public DbSet<Seller> Sellers { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }
