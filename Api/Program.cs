@@ -10,8 +10,11 @@ string connectionString = builder.Configuration.GetConnectionString("DefaultConn
 builder.Services.AddDbContext<ApiDbContext>(opt => opt.UseSqlServer(connectionString));
 builder.Services.AddAutoMapper(typeof(SellerProfile));
 builder.Services.AddAutoMapper(typeof(ProductProfile));
+builder.Services.AddAutoMapper(typeof(ProductOrderProfile));
+builder.Services.AddAutoMapper(typeof(OrderProfile));
 builder.Services.AddScoped<ISellerRepository, SellerRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 
 
 builder.Services.AddControllers();
